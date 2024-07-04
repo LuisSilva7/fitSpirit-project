@@ -13,7 +13,6 @@ import HeaderComponent from "./components/shared/HeaderComponent.vue";
 import FooterComponent from "./components/shared/FooterComponent.vue";
 
 export default {
-  name: "App",
   components: {
     HeaderComponent,
     FooterComponent,
