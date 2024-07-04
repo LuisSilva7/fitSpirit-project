@@ -1,26 +1,9 @@
 <template>
-  <button @click="signInWithGoogle">Login</button>
+  <h1>HOMEEEEEVIEWWWWWW</h1>
 </template>
 
-<script setup>
-import {
-  getAuth,
-  GoogleAuthProvider,
-  signInWithPopup,
-  onAuthStateChanged,
-  signOut,
-} from "firebase/auth";
-
-const signInWithGoogle = () => {
-  const provider = new GoogleAuthProvider();
-  signInWithPopup(getAuth(), provider)
-    .then((result) => {
-      console.log(result.user);
-    })
-    .catch((error) => {
-      console.log(error);
-    });
-};
+<script>
+export default {};
 </script>
 
 <style></style>
