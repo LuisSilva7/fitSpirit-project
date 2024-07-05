@@ -1,9 +1,13 @@
 <template>
-  <h1>HOMEEEEEVIEWWWWWW</h1>
+  <Hero />
 </template>
 
 <script>
-export default {};
+import Hero from "@/components/frontoffice/Hero.vue";
+
+export default {
+  components: { Hero },
+};
 </script>
 
 <style></style>

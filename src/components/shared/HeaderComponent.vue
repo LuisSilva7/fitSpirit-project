@@ -38,9 +38,10 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-left: 2%;
-  padding-right: 3%;
-  background-color: #333; /*ver*/
+  padding-left: 10%;
+  padding-right: 11%;
+  background-color: #505050a2;
+  z-index: 1000;
 }
 
 .logo-container {
@@ -77,32 +78,73 @@ header {
 .nav-links a {
   color: white;
   text-decoration: none;
+  font-size: 1.1rem;
 }
 
 .hamburger {
   display: none;
-  font-size: 24px;
+  font-size: 2.3rem;
   cursor: pointer;
 }
 
-@media (max-width: 768px) {
-  .nav-links {
+@media (max-width: 850px) {
+  header {
+    background-color: #ffffff;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.151);
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .image-container {
     display: none;
+  }
+
+  .association-name {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 2.3rem;
+    color: black;
+  }
+
+  .nav-links {
+    display: flex;
     flex-direction: column;
-    width: 100%;
+    align-items: center;
+    width: 90%;
+    margin: 0 auto;
     position: absolute;
     top: 6rem;
     left: 0;
-    background-color: #333;
+    right: 0;
+    background-color: #ffffff;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out;
   }
 
   .nav-links.active {
-    display: flex;
+    max-height: 500px;
   }
 
   .nav-links li {
-    margin: 0.7rem 0;
+    opacity: 0;
+    padding: 0.7rem 0;
     text-align: center;
+    width: 100%;
+    border-top: 1px solid rgba(0, 0, 0, 0.151);
+    border-left: 1px solid rgba(0, 0, 0, 0.151);
+    border-right: 1px solid rgba(0, 0, 0, 0.151);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.151);
+    transition: opacity 0.5s ease-out;
+  }
+
+  .nav-links.active li {
+    opacity: 1;
+  }
+
+  .nav-links a {
+    color: black;
+    font-size: 1rem;
   }
 
   .hamburger {
