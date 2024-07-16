@@ -1,9 +1,8 @@
 <template>
-  <div class="video-container">
-    <video autoplay muted loop class="video">
-      <source src="../../assets/images/course-video.mp4" type="video/mp4" />
-    </video>
-    <div class="video-overlay"></div>
+  <div class="hero-container">
+    <div class="image">
+      <img src="../../assets/images/teste.jpg" alt="Hero Image" />
+    </div>
     <div class="hero-text">
       <h2>Doing Nothing is Not An Option of Our Life</h2>
       <button>JOIN US NOW!</button>
@@ -38,33 +37,24 @@ export default {};
 @import url("https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Overpass:ital,wght@0,100..900;1,100..900&display=swap");
 
-.video-container {
+.hero-container {
   width: 100%;
-  height: 100vh;
+  position: relative;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
+  height: 95vh;
 }
 
-.video {
-  position: absolute;
-  top: 50%;
-  left: 50%;
+.image {
+  width: 100%;
+  height: 100%;
+}
+
+.image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
-  transform: translate(-50%, -50%);
-}
-
-.video-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(16, 23, 29, 0.568);
-  pointer-events: none; /* Permite que cliques passem pelo overlay */
 }
 
 .hero-text {
@@ -108,7 +98,6 @@ export default {};
   margin: 0 auto;
   font-family: "Overpass", sans-serif;
   font-weight: 300;
-  /*margin-top: -10rem;*/
 }
 
 .stats-container {

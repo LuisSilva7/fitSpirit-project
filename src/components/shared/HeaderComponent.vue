@@ -42,6 +42,8 @@ header {
   padding-right: 11%;
   background-color: #505050a2;
   z-index: 1000;
+  position: fixed;
+  width: 100%;
 }
 
 .logo-container {
