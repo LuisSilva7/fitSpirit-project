@@ -28,6 +28,13 @@ export default {
 }
 
 main {
+  margin-top: 4rem;
   flex: 1;
+}
+
+@media (max-width: 1000px) {
+  main {
+    margin-top: 3rem;
+  }
 }
 </style>

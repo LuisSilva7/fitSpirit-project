@@ -1,17 +1,15 @@
 <template>
-  <header>
+  <header :class="{ scrolled: isScrolled }">
     <div class="logo-container">
-      <div class="image-container">
-        <img src="../../assets/images/fitSpirit-logo.png" alt="Logo" />
-      </div>
       <span class="association-name">FitSpirit</span>
     </div>
     <nav>
       <ul :class="{ 'nav-links': true, active: isMenuActive }">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Iniciatives</a></li>
-        <li><a href="#">Backoffice</a></li>
-        <li><a href="#">Login</a></li>
+        <li><router-link to="/" exact>Home</router-link></li>
+        <li><router-link to="/iniciatives" exact>Iniciatives</router-link></li>
+        <li><router-link to="/about" exact>About</router-link></li>
+        <li><router-link to="/backoffice">Backoffice</router-link></li>
+        <li><router-link to="/login">Login</router-link></li>
       </ul>
       <div class="hamburger" @click="toggleMenu">&#9776;</div>
     </nav>
@@ -23,6 +21,7 @@ export default {
   data() {
     return {
       isMenuActive: false,
+      isScrolled: false,
     };
   },
   methods: {
@@ -34,16 +33,21 @@ export default {
 </script>
 
 <style scoped>
+@import url("https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Overpass:ital,wght@0,100..900;1,100..900&display=swap");
+
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-left: 10%;
-  padding-right: 11%;
-  background-color: #505050a2;
+  padding-left: 20%;
+  padding-right: 21%;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.089);
   z-index: 1000;
   position: fixed;
   width: 100%;
+  transition: background-color 0.3s, color 0.3s;
+  height: 4rem;
 }
 
 .logo-container {
@@ -51,21 +55,11 @@ header {
   align-items: center;
 }
 
-.image-container {
-  height: 6rem;
-  width: 6rem;
-}
-
-.image-container img {
-  height: 100%;
-  width: 100%;
-}
-
 .association-name {
-  font-style: italic;
-  font-family: "Times New Roman", Times, serif;
-  font-size: 2.3rem;
-  color: white;
+  font-family: "Overpass", sans-serif;
+  font-size: 1.5rem;
+  color: black;
+  font-weight: 700;
 }
 
 .nav-links {
@@ -78,9 +72,10 @@ header {
 }
 
 .nav-links a {
-  color: white;
+  color: black;
   text-decoration: none;
-  font-size: 1.1rem;
+  font-size: 1rem;
+  font-family: "Overpass", sans-serif;
 }
 
 .hamburger {
@@ -89,12 +84,19 @@ header {
   cursor: pointer;
 }
 
-@media (max-width: 850px) {
+.nav-links a.router-link-active {
+  color: rgb(248, 111, 45);
+}
+
+@media (max-width: 1000px) {
   header {
     background-color: #ffffff;
     border-bottom: 1px solid rgba(0, 0, 0, 0.151);
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
+    padding-left: 5%;
+    padding-right: 6%;
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+    height: 3rem;
   }
 
   .image-container {
@@ -102,10 +104,7 @@ header {
   }
 
   .association-name {
-    font-style: normal;
-    font-weight: 600;
-    font-size: 2.3rem;
-    color: black;
+    font-size: 2rem;
   }
 
   .nav-links {
@@ -115,7 +114,7 @@ header {
     width: 90%;
     margin: 0 auto;
     position: absolute;
-    top: 6rem;
+    top: 2.9rem;
     left: 0;
     right: 0;
     background-color: #ffffff;
@@ -130,13 +129,10 @@ header {
 
   .nav-links li {
     opacity: 0;
-    padding: 0.7rem 0;
+    padding: 0.3rem 0;
     text-align: center;
     width: 100%;
-    border-top: 1px solid rgba(0, 0, 0, 0.151);
-    border-left: 1px solid rgba(0, 0, 0, 0.151);
-    border-right: 1px solid rgba(0, 0, 0, 0.151);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.151);
+    border: 1px solid rgba(0, 0, 0, 0.151);
     transition: opacity 0.5s ease-out;
   }
 
@@ -145,12 +141,12 @@ header {
   }
 
   .nav-links a {
-    color: black;
     font-size: 1rem;
   }
 
   .hamburger {
     display: block;
+    font-size: 1.8rem;
   }
 }
 </style>
