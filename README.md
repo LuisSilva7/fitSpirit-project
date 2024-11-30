@@ -1,29 +1,44 @@
-# fitspirit-project
+# FitSpirit - Sports Initiatives Management Platform
 
-This template should help get you started developing with Vue 3 in Vite.
+**FitSpirit** is a comprehensive platform designed to promote sports initiatives and manage related activities. It features a user-facing website for viewing and participating in initiatives and a back-office system for workers to monitor and manage the events effectively.
 
-## Recommended IDE Setup
+## Technologies Used
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+- **VueJS** - JavaScript library for building user interfaces.
+- **HTML** - Provides the structure of the web application.
+- **CSS** - Used for styling the interface.
+- **localStorage** - Stores data locally in the browser, such as login state and appointment details.
 
-## Customize configuration
+## How to Run the Project Locally
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+### Installation Steps
 
-## Project Setup
+1. Clone the repository:
 
-```sh
-npm install
-```
+   ```bash
+   git clone https://github.com/LuisSilva7/fitSpirit-project.git
 
-### Compile and Hot-Reload for Development
+   ```
 
-```sh
-npm run dev
-```
+2. Navigate to the project directory:
 
-### Compile and Minify for Production
+   ```bash
+   cd fitSpirit-project
 
-```sh
-npm run build
-```
+   ```
+
+3. Install project dependencies:
+
+   ```bash
+   npm install
+
+   ```
+
+4. Start the development server:
+
+   ```bash
+   npm run dev
+
+   ```
+
+The application will be available at http://localhost:5173 in your browser.
